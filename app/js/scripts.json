@@ -1,0 +1,8 @@
+[
+"bower_components/jquery/dist/jquery.js",
+"bower_components/angular/angular.js",
+"bower_components/angular-route/angular-route.js",
+"app/app.js",
+"app/modules/phone-list/phone-list.module.js",
+"app/modules/phone-list/phone-list.component.js"
+]
