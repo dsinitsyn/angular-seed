@@ -11,7 +11,7 @@
   },
   "author": "Dmitriy Sinitsyn",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "browser-sync": "^2.11.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
@@ -27,12 +27,17 @@
     "imagemin-pngquant": "^4.2.2",
     "rimraf": "^2.5.2"
   },
+  "dependencies": {
+    "angular": "1.5.x",
+    "angular-resource": "1.5.x",
+    "angular-route": "1.5.x"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dsinitsyn/crash-frontend.git"
+    "url": "git+https://github.com/dsinitsyn/angular-seed.git"
   },
   "bugs": {
-    "url": "https://github.com/dsinitsyn/crash-frontend/issues"
+    "url": "https://github.com/dsinitsyn/angular-seed/issues"
   },
-  "homepage": "https://github.com/dsinitsyn/crash-frontend#readme"
+  "homepage": "https://github.com/dsinitsyn/angular-seed#readme"
 }

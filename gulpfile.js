@@ -19,6 +19,7 @@ var gulp = require('gulp'),
 var path = {
     build: {
         html: 'build/',
+        json: 'build/',
         js: 'build/js/',
         css: 'build/css/',
         img: 'build/img/',
@@ -26,6 +27,7 @@ var path = {
     },
     app: {
         html: 'app/**/*.html',
+        json: 'app/**/*.json',
         js: require('./app/js/scripts.json'),
         style: 'app/styles/style.*',
         img: 'app/img/**/*.*',
@@ -33,7 +35,8 @@ var path = {
     },
     watch: {
         html: 'app/**/*.html',
-        js: 'app/js/**/*.*',
+        json: 'app/**/*.json',
+        js: 'app//**/*.js',
         style: 'app/styles/**/*.*',
         img: 'app/img/**/*.*',
         fonts: 'app/fonts/**/*.*'
@@ -45,9 +48,10 @@ var config = {
     server: {
         baseDir: "./build"
     },
-    tunnel: false,
+    tunnel: true,
     host: 'localhost',
     port: 9000,
+    notify: false,
     logPrefix: "crash"
 };
 
@@ -63,6 +67,12 @@ gulp.task('html:build', function () {
     gulp.src(path.app.html) 
         .pipe(rigger())
         .pipe(gulp.dest(path.build.html))
+        .pipe(reload({stream: true}));
+});
+
+gulp.task('json:build', function () {
+    gulp.src(path.app.json) 
+        .pipe(gulp.dest(path.build.json))
         .pipe(reload({stream: true}));
 });
 
@@ -112,6 +122,7 @@ gulp.task('build', [
     'js:build',
     'style:build',
     'fonts:build',
+    'json:build',
     'image:build'
 ]);
 
@@ -130,6 +141,9 @@ gulp.task('watch', function(){
         gulp.start('image:build');
     });
     watch([path.watch.fonts], function(event, cb) {
+        gulp.start('fonts:build');
+    });
+    watch([path.watch.json], function(event, cb) {
         gulp.start('fonts:build');
     });
 });

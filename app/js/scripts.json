@@ -1,8 +1,9 @@
 [
-"bower_components/jquery/dist/jquery.js",
-"bower_components/angular/angular.js",
-"bower_components/angular-route/angular-route.js",
-"app/app.js",
-"app/modules/phone-list/phone-list.module.js",
-"app/modules/phone-list/phone-list.component.js"
+	"node_modules/angular/angular.js",
+	"node_modules/angular-route/angular-route.js",
+	"app/app.js",
+	"app/route.config.js",
+	"app/modules/list/list.module.js",
+	"app/services/service.js",
+	"app/modules/list/list.component.js"
 ]

@@ -1,20 +1,8 @@
-'use strict';
+(function(){
 
-angular.module('phonecatApp', ['phoneList', 'ngRoute']);
+	'use strict';
 
-angular.
-  module('phonecatApp').
-  config(['$locationProvider' ,'$routeProvider',
-    function config($locationProvider, $routeProvider) {
-      $locationProvider.hashPrefix('!');
+	angular.module('seedApp', ['ngRoute', 'list']);
 
-      $routeProvider.
-        when('/phones', {
-          template: '<phone-list></phone-list>'
-        }).
-        when('/phones/:phoneId', {
-          template: '<phone-detail></phone-detail>'
-        }).
-        otherwise('/phones');
-    }
-  ]);
+})();
+
